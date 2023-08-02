@@ -8,6 +8,7 @@ public class Main {
   private static final int SHOW_DATA = 2;
   private static final int SAVE_DATA = 3;
 
+  // Get the bit position from the user within the valid range (0 to sizeVector - 1)
   public static int getPositionFromUser(Scanner sc, int sizeVector) {
     int position = -1;
 
@@ -24,6 +25,7 @@ public class Main {
     return position;
   }
 
+  // Get the valid size of the BitVector from the user (a positive integer)
   public static int getValidSizeFromUser(Scanner sc) {
     int size = 0;
     System.out.print("Please input the array size: ");
@@ -40,6 +42,7 @@ public class Main {
     return size;
   }
 
+  // Get the command from the user (0, 1, 2, or 3) corresponding to specific actions
   public static int getCommand(Scanner sc) {
     int command;
     while (true) {
@@ -90,7 +93,7 @@ public class Main {
           if (saveChoice.equals("y")) {
             System.out.print("Please enter the file name to save: ");
             sc.nextLine();
-            String fileName = sc.nextLine().trim(); // Use nextLine() to get the filename with spaces
+            String fileName = sc.nextLine().trim();
             try {
               bitVector.saveToFile(fileName);
               System.out.println(
